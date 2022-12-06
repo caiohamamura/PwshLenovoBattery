@@ -10,6 +10,7 @@ A lighweight powershell module for handling the battery mode for now. This repos
   - This dll needs to be placed in the same directory as the executable
   
 ### How to get PowerBattery.dll
+- Method C: release https://github.com/caiohamamura/PwshLenovoBattery/releases/download/v0.1/PowerBattery.dll
 - Method A
   1. Install Lenovo Vantage from the Microsoft Store
   2. Copy it from C:\ProgramData\Lenovo\Vantage\Addins\IdeaNotebookAddin\ to the Ideapad Toolkit directory
@@ -22,6 +23,28 @@ A lighweight powershell module for handling the battery mode for now. This repos
   5.  Inside 7Zip, navigate to LenovoVantagePackage\[Version\]x64.msix/DeployAssistant/ImController/Plugins\[Version\].cab/plugins.7z/Normal/IdeaNotebookPlugin/x64
   6.  PowerBattery.dll should be in there
 
+
+ ## Installing this Module
+
+  1. Download `PowerBattery.dll` as from the previous section and put it somewhere in your `PATH` environmental variable
+  1. Download the compiled module [LenovoBattery.dll](https://github.com/caiohamamura/PwshLenovoBattery/releases/download/v0.1/LenovoBattery.dll) or compile from source using `dotnet build -c:Release`
+  1. Put the compiled module inside a Folder with the same name `LenovoBattery` somewhere in your `$env:PSModulePath`, usually in the `$env:USERPROFILE\Documents\Powershell\Modules`.
+  1. Now you can import it manually inside Powershell with `Import-Module LenovoBattery` or put it in your `$PROFILE` (a file which is started with powershell, usually in `$env:USERPROFILE\Documents\Powershell\`).
+  
+  
+  ## Usage
+
+  This module provides the following `cmdlets`:
+  ``` powershell
+  Get-LenovoChargingMode
+  Get-LenovoPowerPlan
+  Get-LenovoAlwaysOnUSB
+  Get-LenovoAlwaysOnUsbBattery
+  Set-LenovoChargingMode {Efficiency, Conservation, Rapid}
+  Set-LenovoPowerPlan {Efficiency, Extreme, IntelligentCooling}
+  Set-LenovoAlwaysOnUSB {$true, $false}
+  Set-LenovoAlwaysOnUsbBattery {$true, $false}
+  ```
 
  ## Third party licenses
  [reagcz/IdeapadToolkit](https://github.com/reagcz/IdeapadToolkit/blob/main/LICENSE)
