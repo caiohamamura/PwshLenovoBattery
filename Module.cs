@@ -88,8 +88,8 @@ Valid options: Normal, Conservation, Rapid");
                 PowerPlan powerPlan;
                 powerPlan =
                     Helper.HasInBeggining(Plan, "efficiency") ? PowerPlan.EfficiencyMode :
-                    Helper.HasInBeggining(Plan, "rapid") ? PowerPlan.ExtremePerformance :
-                    Helper.HasInBeggining(Plan, "normal") ? PowerPlan.IntelligentCooling : PowerPlan.None;
+                    Helper.HasInBeggining(Plan, "extreme") ? PowerPlan.ExtremePerformance :
+                    Helper.HasInBeggining(Plan, "intelligentcooling") ? PowerPlan.IntelligentCooling : PowerPlan.None;
 
                 if (powerPlan == PowerPlan.None)
                 {
