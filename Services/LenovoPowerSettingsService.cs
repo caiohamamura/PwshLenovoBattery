@@ -74,15 +74,15 @@ namespace IdeapadToolkit.Services
             _ = SetITSMode(ref instance, ref plan);
         }
 
-        public PowerPlan GetChargingMode()
+        public ChargingMode GetChargingMode()
         {
             var instance = new CChargingMode();
             instance = CChargingMode(ref instance);
-            PowerPlan mode = (PowerPlan)(GetChargingMode(ref instance));
+            ChargingMode mode = (ChargingMode)(GetChargingMode(ref instance));
             return mode;
         }
 
-        public void SetChargingMode(PowerPlan chargingMode)
+        public void SetChargingMode(ChargingMode chargingMode)
         {
             var instance = new CChargingMode();
             instance = CChargingMode(ref instance);

@@ -7,8 +7,8 @@ namespace IdeapadToolkit.Services
         PowerPlan GetPowerPlan();
         void SetPowerPlan(PowerPlan plan);
 
-        PowerPlan GetChargingMode();
-        void SetChargingMode(PowerPlan chargingMode);
+        ChargingMode GetChargingMode();
+        void SetChargingMode(ChargingMode chargingMode);
 
         bool IsAlwaysOnUsbEnabled();
         void SetAlwaysOnUsb(bool alwaysOnUsbEnabled);
