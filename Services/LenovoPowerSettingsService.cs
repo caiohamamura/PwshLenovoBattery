@@ -1,4 +1,4 @@
-using IdeapadToolkit.Models;
+﻿using IdeapadToolkit.Models;
 using System;
 using System.Runtime.InteropServices;
 
@@ -59,9 +59,9 @@ namespace IdeapadToolkit.Services
 
         public PowerPlan GetPowerPlan()
         {
-            CIntelligentCooling instance = new();
+            var instance = new CIntelligentCooling();
             instance = CIntelligentCooling(ref instance);
-            PowerPlan newmode = new();
+            var newmode = new PowerPlan();
             int trash = 0;
             _ = GetITSMode(ref instance, ref trash, ref newmode);
             return newmode;
@@ -69,14 +69,14 @@ namespace IdeapadToolkit.Services
 
         public void SetPowerPlan(PowerPlan plan)
         {
-            CIntelligentCooling instance = new();
+            var instance = new CIntelligentCooling();
             instance = CIntelligentCooling(ref instance);
             _ = SetITSMode(ref instance, ref plan);
         }
 
         public ChargingMode GetChargingMode()
         {
-            CChargingMode instance = new();
+            var instance = new CChargingMode();
             instance = CChargingMode(ref instance);
             ChargingMode mode = (ChargingMode)(GetChargingMode(ref instance));
             return mode;
@@ -84,7 +84,7 @@ namespace IdeapadToolkit.Services
 
         public void SetChargingMode(ChargingMode chargingMode)
         {
-            CChargingMode instance = new();
+            var instance = new CChargingMode();
             instance = CChargingMode(ref instance);
             try
             {
@@ -98,20 +98,15 @@ namespace IdeapadToolkit.Services
 
         public bool IsAlwaysOnUsbEnabled()
         {
-            CUSBCharger instance = new();
+            var instance = new CUSBCharger();
             instance = CUSBCharger(ref instance);
             var res = (OpenOrClose(ref instance));
-            return res switch
-            {
-                2 => false,
-                1 => true,
-                _ => false
-            };
+            return res == 1;
         }
 
         public void SetAlwaysOnUsb(bool alwaysOnUsbEnabled)
         {
-            CUSBCharger instance = new();
+            var instance = new CUSBCharger();
             instance = CUSBCharger(ref instance);
             switch (alwaysOnUsbEnabled)
             {
@@ -126,20 +121,15 @@ namespace IdeapadToolkit.Services
 
         public bool IsAlwaysOnUsbBatteryEnabled()
         {
-            CUSBBatteryCharger instance = new();
+            var instance = new CUSBBatteryCharger();
             instance = CUSBBatteryCharger(ref instance);
             var res = (OpenOrClose(ref instance));
-            return res switch
-            {
-                2 => false,
-                1 => true,
-                _ => false
-            };
+            return res == 1;
         }
 
         public void SetAlwaysOnUsbBattery(bool alwaysOnUsbBattryEnabled)
         {
-            CUSBBatteryCharger instance = new();
+            var instance = new CUSBBatteryCharger();
             instance = CUSBBatteryCharger(ref instance);
             switch (alwaysOnUsbBattryEnabled)
             {
