@@ -87,14 +87,14 @@ Valid options: Normal, Conservation, Rapid");
             {
                 PowerPlan powerPlan;
                 powerPlan =
-                    Helper.HasInBeggining(Plan, "efficiency") ? PowerPlan.EfficiencyMode :
-                    Helper.HasInBeggining(Plan, "extreme") ? PowerPlan.ExtremePerformance :
+                    Helper.HasInBeggining(Plan, "efficiencymode") ? PowerPlan.EfficiencyMode :
+                    Helper.HasInBeggining(Plan, "extremeperformance") ? PowerPlan.ExtremePerformance :
                     Helper.HasInBeggining(Plan, "intelligentcooling") ? PowerPlan.IntelligentCooling : PowerPlan.None;
 
                 if (powerPlan == PowerPlan.None)
                 {
-                    throw new Exception(@"Invalid power mode!
-Valid options: Efficiency, Extreme, IntelligentCooling");
+                    throw new Exception(@"Invalid power plan!
+Valid options: EfficiencyMode, ExtremePerformance, IntelligentCooling");
                 }
 
                 Service.SetPowerPlan(powerPlan);
