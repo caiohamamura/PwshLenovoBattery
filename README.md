@@ -6,6 +6,7 @@ A lighweight powershell module for handling the battery mode for now. This repos
 - Probably any laptop that can be handled by Lenovo Vantage?
 
 ## Prerequisites
+- Lenovo Notebook ITS Service running: check `services.msc`
 - PowerBattery.dll
   - This dll needs to be placed in the same directory as the executable
   
