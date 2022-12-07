@@ -26,9 +26,13 @@ A lighweight powershell module for handling the battery mode for now. This repos
 
  ## Installing this Module
 
+### Option 1: Powershell Gallery
+ 1. Install-Module -Name LenovoBattery
+
+### Option 2: Compile from source
   1. Download `PowerBattery.dll` as from the previous section and put it somewhere in your `PATH` environmental variable
   1. Download the compiled module [LenovoBattery.dll](https://github.com/caiohamamura/PwshLenovoBattery/releases/download/v0.1/LenovoBattery.dll) or compile from source using `dotnet build -c:Release`
-  1. Put the compiled module inside a Folder with the same name `LenovoBattery` somewhere in your `$env:PSModulePath`, usually in the `$env:USERPROFILE\Documents\Powershell\Modules`.
+  1. Put the compiled binary along with `PowerBattery.dll` inside a Folder with the same name `LenovoBattery` somewhere in your `$env:PSModulePath`, usually in the `$env:USERPROFILE\Documents\Powershell\Modules`.
   1. Now you can import it manually inside Powershell with `Import-Module LenovoBattery` or put it in your `$PROFILE` (a file which is started with powershell, usually in `$env:USERPROFILE\Documents\Powershell\`).
   
   
