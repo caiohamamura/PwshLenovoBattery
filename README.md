@@ -44,8 +44,8 @@ A lighweight powershell module for handling the battery mode for now. This repos
   Get-LenovoPowerPlan
   Get-LenovoAlwaysOnUSB
   Get-LenovoAlwaysOnUsbBattery
-  Set-LenovoChargingMode {Efficiency, Conservation, Rapid}
-  Set-LenovoPowerPlan {Efficiency, Extreme, IntelligentCooling}
+  Set-LenovoChargingMode {Normal, Conservation, Rapid}
+  Set-LenovoPowerPlan {EfficiencyMode, ExtremePerformance, IntelligentCooling}
   Set-LenovoAlwaysOnUSB {$true, $false}
   Set-LenovoAlwaysOnUsbBattery {$true, $false}
   ```
