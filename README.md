@@ -1,6 +1,6 @@
 # Lenovo Battery Powershell Module
 
-A lighweight powershell module for handling the battery mode for now. This repository is a fork from https://github.com/reagcz/IdeapadToolkit and all credits from communicating with the `PowerBattery.dll` go to [reacz](https://github.com/reagcz).
+A lighweight powershell module for handling the battery mode for now. This repository is a fork from https://github.com/reagcz/IdeapadToolkit and all credits from communicating with the `PowerBattery.dll` go to [reagcz](https://github.com/reagcz).
 
 ## Supported laptops
 - Probably any laptop that can be handled by Lenovo Vantage?
