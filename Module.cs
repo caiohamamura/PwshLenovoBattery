@@ -2,8 +2,9 @@
 using System.Management.Automation;
 using IdeapadToolkit.Models;
 using IdeapadToolkit.Services;
+using PwshLenovoBattery.Models;
 
-namespace src
+namespace PwshLenovoBattery
 {
 
     [Cmdlet(VerbsCommon.Get, "LenovoChargingMode")]
@@ -47,6 +48,23 @@ namespace src
         protected override void ProcessRecord()
         {
             WriteObject(Service.IsAlwaysOnUsbBatteryEnabled());
+        }
+    }
+
+    [Cmdlet(VerbsCommon.Get, "LenovoStatus")]
+    [Alias("glns")]
+    [OutputType(typeof(BatteryStatus))]
+    public class LenovoStatus : PSCmdlet
+    {
+        protected override void ProcessRecord()
+        {
+            var batteryStatus = new BatteryStatus(
+                Service.GetChargingMode(),
+                Service.GetPowerPlan(),
+                Service.IsAlwaysOnUsbEnabled(),
+                Service.IsAlwaysOnUsbBatteryEnabled()
+            );
+            WriteObject(batteryStatus);
         }
     }
 
@@ -111,10 +129,10 @@ Valid options: EfficiencyMode, ExtremePerformance, IntelligentCooling");
             // This method will be called for each input received from the pipeline to this cmdlet; if no input is received, this method is not called
             protected override void ProcessRecord()
             {
-               Service.SetAlwaysOnUsb(Flag);
+                Service.SetAlwaysOnUsb(Flag);
             }
         }
-        
+
         [Cmdlet(VerbsCommon.Set, "LenovoAlwaysOnUsbBattery")]
         [Alias("slnusbb")]
         public class SetLenovoAlwaysOnUsbBattery : PSCmdlet
@@ -125,7 +143,7 @@ Valid options: EfficiencyMode, ExtremePerformance, IntelligentCooling");
             // This method will be called for each input received from the pipeline to this cmdlet; if no input is received, this method is not called
             protected override void ProcessRecord()
             {
-               Service.SetAlwaysOnUsbBattery(Flag);
+                Service.SetAlwaysOnUsbBattery(Flag);
             }
         }
     }

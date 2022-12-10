@@ -41,6 +41,7 @@ A lighweight powershell module for handling the battery mode for now. This repos
 
   This module provides the following `cmdlets`:
   ``` powershell
+  Get-LevovoStatus
   Get-LenovoChargingMode
   Get-LenovoPowerPlan
   Get-LenovoAlwaysOnUSB

@@ -12,7 +12,7 @@
 RootModule = 'LenovoBattery.dll'
 
 # Version number of this module.
-ModuleVersion = '0.2'
+ModuleVersion = '0.3'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -74,6 +74,7 @@ FunctionsToExport = @(
     'Get-LenovoPowerPlan';
     'Get-LenovoAlwaysOnUSB';
     'Get-LenovoAlwaysOnUsbBattery';
+    'Get-LenovoStatus';
     'Set-LenovoChargingMode';
     'Set-LenovoPowerPlan';
     'Set-LenovoAlwaysOnUSB';
@@ -86,6 +87,7 @@ CmdletsToExport = @(
     'Get-LenovoPowerPlan';
     'Get-LenovoAlwaysOnUSB';
     'Get-LenovoAlwaysOnUsbBattery';
+    'Get-LenovoStatus';
     'Set-LenovoChargingMode';
     'Set-LenovoPowerPlan';
     'Set-LenovoAlwaysOnUSB';
@@ -101,6 +103,7 @@ AliasesToExport = @(
     'glnpp';
     'glnusb';
     'glnusbb';
+    'glns';
     'slncm';
     'slnpp';
     'slnusb';
