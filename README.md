@@ -11,15 +11,15 @@ A lighweight powershell module for handling the battery mode for now. This repos
   - This dll needs to be placed in the same directory as the executable
   
 ### How to get PowerBattery.dll
-- Method C: release https://github.com/caiohamamura/PwshLenovoBattery/releases/download/v0.1/PowerBattery.dll
-- Method A
+- Method A: release https://github.com/caiohamamura/PwshLenovoBattery/releases/download/v0.1/PowerBattery.dll
+- Method B:
   1. Install Lenovo Vantage from the Microsoft Store
   2. Copy it from C:\ProgramData\Lenovo\Vantage\Addins\IdeaNotebookAddin\ to the Ideapad Toolkit directory
   3. Lenovo Vantage can now be uninstalled
-- Method B (Without Microsoft Store)
+- Method C (Without Microsoft Store):
   1.  Go to https://store.rg-adguard.net/
   2.  Enter the link to Lenovo Vantage (https://apps.microsoft.com/store/detail/lenovo-vantage/9WZDNCRFJ4MV)
-  3.  Download the newest version in the **.msixbundle** format (The file should be called "something LevovoCompanion something **.msixbundle**)
+  3.  Download the newest version in the **.msixbundle** format (The file should be called "something LenovoCompanion something **.msixbundle**)
   4.  Open the .msixbundle file using 7Zip or similar software
   5.  Inside 7Zip, navigate to LenovoVantagePackage\[Version\]x64.msix/DeployAssistant/ImController/Plugins\[Version\].cab/plugins.7z/Normal/IdeaNotebookPlugin/x64
   6.  PowerBattery.dll should be in there
